@@ -40,13 +40,13 @@ public class HomeController {
 
     @RequestMapping("/detail/{id}")
     public String showAddressBook(@PathVariable("id") long id, Model model) {
-        model.addAttribute("address", addressBookRepository.findOne(id));
+        model.addAttribute("addressBook", addressBookRepository.findOne(id));
         return "show";
     }
 
     @RequestMapping("/update/{id}")
     public String updateAddressBook(@PathVariable("id") long id, Model model) {
-        model.addAttribute("address", addressBookRepository.findOne(id));
+        model.addAttribute("addressBook", addressBookRepository.findOne(id));
 
         return "addressform";
     }

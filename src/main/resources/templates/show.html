@@ -6,12 +6,12 @@
 </head>
 <body>
 <a href="/">Show All Addresses </a> <br />
-Title: <span th:text="$ address.title}"></span> <br />
-Instructor: <span th:text="$ address.instructor}"></span> <br />
-Description: <span th:text="$ address.description}"></span> <br />
-Credit: <span th:text="$ address.credit}"></span> <br />
+Title: <span th:text="${addressBook.firstName}"></span> <br />
+Instructor: <span th:text="${addressBook.lastName}"></span> <br />
+Description: <span th:text="${addressBook.phoneNumber}"></span> <br />
+Credit: <span th:text="${addressBook.email}"></span> <br />
 
-<a th:href="@{/delete/{id}(id=${address.id})}">Delete this address </a>
+<a th:href="@{/delete/{id}(id=${addressBook.id})}">Delete this address </a>
 
 
 
