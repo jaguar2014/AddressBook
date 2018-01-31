@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class HomeController {
@@ -55,6 +56,16 @@ public class HomeController {
     public String delAddressBook(@PathVariable("id") long id) {
         addressBookRepository.delete(id);
         return "redirect:/";
+    }
+
+    @RequestMapping("/search")
+    public String searchAddressBookByFirstName(@RequestParam("searchTerm") String searchTerm, Model model){
+
+     List<AddressBook> addressBook= addressBookRepository.findByLastName(searchTerm);
+     model.addAttribute("addresses",addressBook);
+
+
+        return "list";
     }
 
 }
