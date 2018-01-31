@@ -6,11 +6,7 @@
 </head>
 <body>
 <a href="/add">Add an Address</a>
-<form action="/search" method="post">
-    <input type="text" placeholder="please enter your search term" name="searchTerm" />
 
-    <input type="submit" name="Search" />
-</form>
 <br />
 <table>
     <tr>
@@ -43,5 +39,11 @@
 
 
 </table>
+
+<form action="/search" method="post">
+    <input type="text" placeholder="Enter Last Name" name="searchTerm" />
+
+    <input type="submit" value="Search By Last Name" name="submit"/>
+</form>
 </body>
 </html>
