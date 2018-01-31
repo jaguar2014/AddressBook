@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Address Book</title>
+</head>
+<body>
+<a href="/add">Add an Address</a>
+<br />
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+
+    </tr>
+
+    <tr th:each="address : ${addresses}">
+
+
+        <td th:text="${address.firstName}"></td>
+        <td th:text="${address.lastName}"></td>
+        <td th:text="${address.address}"></td>
+        <td th:text="${address.phoneNumber}"></td>
+        <td th:text="${address.email}"></td>
+        <td>
+            <a th:href="@{/update/{id}(id=${address.id})}">Update</a>
+            <a th:href="@{/detail/{id}(id=${address.id})}">Details</a>
+            <a th:href="@{/delete/{id}(id=${address.id})}">Delete</a>
+
+
+        </td>
+
+
+    </tr>
+
+
+</table>
+</body>
+</html>
